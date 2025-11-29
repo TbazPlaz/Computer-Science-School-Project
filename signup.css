@@ -1,0 +1,239 @@
+/* Page background and header */
+body {
+    background: #f2f8fb;
+}
+
+.signup-header {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #e6eef2;
+    background: #ffffff;
+}
+
+.signup-title {
+    color: #6b7c93;
+    font-weight: 600;
+}
+
+/* Layout */
+.signup-wrap {
+    max-width: 1100px;
+    margin: 32px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Left illustration */
+.signup-illustration {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.signup-illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+/* Right card */
+.signup-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    padding: 32px 28px;
+}
+
+.signup-card h1 {
+    font-size: 24px;
+    margin-bottom: 6px;
+    color: #2b3e50;
+}
+
+.subtitle {
+    color: #8aa0b2;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+/* Form */
+.signup-form label {
+    display: block;
+    font-weight: 600;
+    color: #4a5a6a;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.input-group input {
+    width: 100%;
+    height: 40px;
+    padding: 0 40px 0 12px;
+    border: 1px solid #d9e3ea;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #2b3e50;
+    background: #ffffff;
+}
+
+.input-group input::placeholder {
+    color: #9fb2c4;
+}
+
+.input-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9fb2c4;
+    pointer-events: none;
+    font-size: 16px;
+}
+
+/* Show/hide password buttons */
+.toggle-password,
+.toggle-confirm-password {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #8aa0b2;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+}
+
+.toggle-password:hover,
+.toggle-confirm-password:hover {
+    background: #f3f7fa;
+}
+
+/* Checkbox group */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-top: 2px;
+    accent-color: #0099cc;
+}
+
+.checkbox-label {
+    font-size: 13px;
+    color: #6b7c93;
+    line-height: 1.4;
+}
+
+.checkbox-label .link {
+    color: #0099cc;
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+    border: none;
+    margin-top: 6px;
+    margin-bottom: 14px;
+}
+
+.btn-primary:hover {
+    filter: brightness(0.95);
+}
+
+.btn-outline {
+    background: #ffffff;
+    border: 1px solid #d9e3ea;
+    color: #2b3e50;
+    margin-bottom: 10px;
+}
+
+.btn-google i,
+.btn-facebook i {
+    color: #7289da; /* neutral icon tone */
+}
+
+/* Separator */
+.or-separator {
+    display: grid;
+    place-items: center;
+    margin: 8px 0 12px;
+    position: relative;
+    color: #99aabb;
+    font-size: 12px;
+}
+
+.or-separator::before,
+.or-separator::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 40%;
+    background: #e6eef2;
+    top: 50%;
+}
+
+.or-separator::before { left: 0; }
+.or-separator::after { right: 0; }
+
+/* Footer text */
+.signup-footer {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+    color: #6b7c93;
+    font-size: 13px;
+}
+
+.signup-footer .link {
+    color: #0099cc;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .signup-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .signup-illustration {
+        height: 320px;
+    }
+}

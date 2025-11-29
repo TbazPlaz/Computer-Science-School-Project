@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StaySpot - Login Page</title>
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="CSS/login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <main class="login-wrap">
+        <!-- Left illustration -->
+        <aside class="login-illustration">
+            <img src="Images/Screenshot 2025-10-21 160208.png" alt="People in living room" />
+        </aside>
+
+        <!-- Right login card -->
+        <section class="login-card">
+            <h1>Sign In</h1>
+            <p class="subtitle">Welcome back to your travel adventure!</p>
+
+            <form class="login-form" action="PHP/login.php" method="POST" novalidate>
+                <label for="email">Email</label>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required />
+                    <i class="fa-regular fa-envelope input-icon" aria-hidden="true"></i>
+                </div>
+
+                <label for="password">Password</label>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="••••••••" required />
+                    <button type="button" class="toggle-password" aria-label="Show password">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Sign In</button>
+
+                <div class="or-separator">
+                    <span>Or</span>
+                </div>
+
+                <button type="button" class="btn btn-outline btn-google">
+                    <i class="fab fa-google"></i>
+                    Continue with Google
+                </button>
+
+                <button type="button" class="btn btn-outline btn-facebook">
+                    <i class="fab fa-facebook"></i>
+                    Continue with Facebook
+                </button>
+
+                <div class="login-footer">
+                    <span>Don't have an account?</span>
+                    <a href="signup.html" class="link">Sign up</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!--<script src="JavaScript/login.js"></script>-->
+</body>
+</html>

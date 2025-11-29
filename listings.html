@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoomHive - Property Listings</title>
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="CSS/listings.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="Images/0e36505fbfae41fdbe7a68bbb877d169-free__1_-removebg-preview.png" alt="RoomHive Logo" class="brand-logo" />
+        <h1>RoomHive</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="Index.html" class="active"><i class="fas fa-home"></i><span>Stays</span></a></li>
+          <li><a href="#"><i class="fas fa-star"></i><span>Experiences</span></a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons"></div>
+    </header>
+
+    <main class="listings-page">
+      <section class="filters" aria-label="Filters">
+        <h2>Filters</h2>
+        <div class="filter-group">
+          <label for="filter-city">City</label>
+          <input type="text" id="filter-city" placeholder="e.g. London" />
+        </div>
+        <div class="filter-group">
+          <label for="filter-price">Max price (£/night)</label>
+          <input type="range" id="filter-price" min="0" max="500" step="10" />
+          <div class="range-value" id="filter-price-value">£0</div>
+        </div>
+        <div class="filter-row">
+          <div class="filter-group">
+            <label for="filter-guests">Guests</label>
+            <input type="number" id="filter-guests" min="0" max="20" />
+          </div>
+          <div class="filter-group">
+            <label for="filter-type">Type</label>
+            <select id="filter-type">
+              <option value="">Any</option>
+              <option value="entire">Entire place</option>
+              <option value="private">Private room</option>
+              <option value="shared">Shared room</option>
+            </select>
+          </div>
+        </div>
+        <div class="filter-row">
+          <div class="filter-group">
+            <label for="filter-bedrooms">Bedrooms</label>
+            <input type="number" id="filter-bedrooms" min="0" max="10" />
+          </div>
+          <div class="filter-group">
+            <label for="filter-bathrooms">Bathrooms</label>
+            <input type="number" id="filter-bathrooms" min="0" max="10" />
+          </div>
+        </div>
+        <fieldset class="filter-group">
+          <legend>Amenities</legend>
+          <label><input type="checkbox" value="wifi" class="filter-amenity" /> Wi‑Fi</label>
+          <label><input type="checkbox" value="kitchen" class="filter-amenity" /> Kitchen</label>
+          <label><input type="checkbox" value="washer" class="filter-amenity" /> Washer</label>
+          <label><input type="checkbox" value="parking" class="filter-amenity" /> Parking</label>
+        </fieldset>
+        <button class="apply-filters">Apply Filters</button>
+        <button class="reset-filters">Reset</button>
+      </section>
+
+      <section class="results" aria-label="Results">
+        <div class="results-header">
+          <div class="applied" id="applied" aria-live="polite"></div>
+          <div class="sort-view">
+            <label for="sort">Sort</label>
+            <select id="sort">
+              <option value="relevance">Relevance</option>
+              <option value="price_asc">Price: Low to High</option>
+              <option value="price_desc">Price: High to Low</option>
+            </select>
+            <button class="view-toggle" id="view-grid" aria-pressed="true"><i class="fas fa-th"></i></button>
+            <button class="view-toggle" id="view-list" aria-pressed="false"><i class="fas fa-list"></i></button>
+          </div>
+        </div>
+        <div class="summary" id="summary" aria-live="polite"></div>
+        <div class="grid" id="grid" aria-busy="false"></div>
+        <div class="pagination" id="pagination"></div>
+        <div class="error" id="error" role="alert" hidden></div>
+      </section>
+    </main>
+
+    <script src="JavaScript/listings.js"></script>
+  </body>
+</html>

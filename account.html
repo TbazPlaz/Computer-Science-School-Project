@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/login.css">
+</head>
+<body>
+    <header class="header" style="padding:16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;">
+        <a href="Index.html" style="text-decoration:none;color:#333;font-weight:700;font-size:20px;">StaySpot</a>
+        <div>
+            <a href="PHP/logout.php" class="btn btn-outline" style="padding:8px 12px;text-decoration:none;display:inline-block;">Logout</a>
+        </div>
+    </header>
+
+    <main style="max-width:900px;margin:24px auto;padding:0 16px;">
+        <section style="background:#fff;border:1px solid #e6eef2;border-radius:10px;padding:20px;">
+            <h1 style="margin:0 0 8px;">Your Account</h1>
+            <p style="color:#6b7c93;margin:0 0 16px;">Manage your account details</p>
+
+            <div>
+                <div style="margin:12px 0;">
+                    <strong>Name:</strong> <em>(shown after saving)</em>
+                </div>
+                <div style="margin:12px 0;">
+                    <strong>Email:</strong> <em>(your current email)</em>
+                </div>
+            </div>
+
+            <hr style="margin:20px 0;">
+
+            <h2 style="margin:0 0 12px;">Edit Account</h2>
+            <form action="PHP/update_account.php" method="POST" style="display:grid;gap:12px;max-width:520px;">
+                <label>
+                    <span>Full Name</span>
+                    <input type="text" id="name" name="name" required style="width:100%;padding:10px;border:1px solid #ccd9e2;border-radius:8px;">
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" id="email" name="email" disabled style="width:100%;padding:10px;border:1px solid #ccd9e2;border-radius:8px;">
+                </label>
+                <label>
+                    <span>New Password (optional)</span>
+                    <input type="password" id="new_password" name="new_password" style="width:100%;padding:10px;border:1px solid #ccd9e2;border-radius:8px;">
+                </label>
+                <label>
+                    <span>Confirm New Password</span>
+                    <input type="password" id="confirm_password" name="confirm_password" style="width:100%;padding:10px;border:1px solid #ccd9e2;border-radius:8px;">
+                </label>
+                <button type="submit" class="btn btn-primary" style="padding:10px 14px;">Save Changes</button>
+            </form>
+        </section>
+    </main>
+    <!-- JavaScript disabled for now to keep site static -->
+</body>
+</html>

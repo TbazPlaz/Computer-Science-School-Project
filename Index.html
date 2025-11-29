@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoomHive - Find Your Perfect Stay</title>
+    <link rel="stylesheet" href="CSS/index.css?v=10" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <header>
+      <div class="logo">
+        <img
+          src="Images/0e36505fbfae41fdbe7a68bbb877d169-free__1_-removebg-preview.png"
+          alt="RoomHive Logo"
+          class="brand-logo"
+        />
+        <h1>RoomHive</h1>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="active">
+              <i class="fas fa-home"></i>
+              <span>Stays</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-star"></i>
+              <span>Experiences</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="host-link">Become a host</button>
+        
+        <div class="profile-menu-container">
+          <button class="profile-menu" id="profile-menu-btn">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-user-circle"></i>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div class="profile-dropdown" id="profile-dropdown">
+            <div class="dropdown-item">
+              <i class="fas fa-question-circle"></i>
+              <span>Help Centre</span>
+            </div>
+            <hr class="dropdown-divider" />
+            <div class="dropdown-item">
+              <span>Become a host</span>
+              <div class="dropdown-subtitle">
+                It's easy to start hosting and earn extra income.
+              </div>
+            </div>
+            <div class="dropdown-item">
+              <span>Refer a host</span>
+            </div>
+            <hr class="dropdown-divider" />
+            <div class="dropdown-item auth-item" id="login-signup">
+              <span>Log in or sign up</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Find Your Perfect Stay</h1>
+        <p>Verified rooms for students and young professionals</p>
+
+        <!-- Airbnb-style Segmented Search -->
+        <div class="search-box" role="search" aria-label="Find stays">
+          <div class="search-segments" role="tablist" aria-label="Search fields">
+            <button class="segment segment-where" role="tab" aria-selected="true" aria-controls="overlay-where" id="tab-where">
+              <span class="segment-label">Where</span>
+              <input type="text" id="location" placeholder="Search destinations" aria-label="Destination" autocomplete="off" />
+            </button>
+            <button class="segment segment-when" role="tab" aria-selected="false" aria-controls="overlay-when" id="tab-when">
+              <span class="segment-label">When</span>
+              <input type="text" id="when-display" placeholder="Add dates" aria-label="Dates" aria-live="polite" readonly />
+            </button>
+            <button class="segment segment-who" role="tab" aria-selected="false" aria-controls="overlay-who" id="tab-who">
+              <span class="segment-label">Who</span>
+              <input type="text" id="guests" placeholder="Add guests" aria-label="Guests" aria-live="polite" readonly />
+            </button>
+            <button class="search-button" aria-label="Search">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="overlay-panel" id="overlay-where" role="dialog" aria-modal="false" aria-labelledby="tab-where" aria-hidden="true" tabindex="-1">
+            <div class="suggestions" role="listbox" aria-label="Suggested destinations"></div>
+          </div>
+          <div class="overlay-panel" id="overlay-when" role="dialog" aria-modal="false" aria-labelledby="tab-when" aria-hidden="true" tabindex="-1">
+            <div class="when-panel">
+              <div class="quick-picks" aria-label="Quick date ranges">
+                <button class="quick-pick" data-range="today" aria-label="Select today">
+                  <div class="qp-text">
+                    <span class="qp-title">Today</span>
+                    <span class="qp-sub" id="qp-today"></span>
+                  </div>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                <button class="quick-pick" data-range="tomorrow" aria-label="Select tomorrow">
+                  <div class="qp-text">
+                    <span class="qp-title">Tomorrow</span>
+                    <span class="qp-sub" id="qp-tomorrow"></span>
+                  </div>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                <button class="quick-pick" data-range="weekend" aria-label="Select this weekend">
+                  <div class="qp-text">
+                    <span class="qp-title">This weekend</span>
+                    <span class="qp-sub" id="qp-weekend"></span>
+                  </div>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                <button class="quick-pick" data-range="nextweek" aria-label="Select next week">
+                  <div class="qp-text">
+                    <span class="qp-title">Next week</span>
+                    <span class="qp-sub" id="qp-nextweek"></span>
+                  </div>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="date-grid">
+                <div class="date-field">
+                  <label for="check-in">Check in</label>
+                  <input type="date" id="check-in" aria-label="Check-in date" />
+                </div>
+                <div class="date-field">
+                  <label for="check-out">Check out</label>
+                  <input type="date" id="check-out" aria-label="Check-out date" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overlay-panel" id="overlay-who" role="dialog" aria-modal="false" aria-labelledby="tab-who" aria-hidden="true" tabindex="-1">
+            <div class="guests-grid" aria-label="Guest selectors">
+              <div class="guest-row">
+                <div class="guest-info">
+                  <span class="guest-title">Adults</span>
+                  <span class="guest-sub">Ages 13 or above</span>
+                </div>
+                <div class="guest-controls">
+                  <button class="counter-btn minus" aria-label="Decrease adults" data-target="adults">−</button>
+                  <span class="count" id="count-adults">0</span>
+                  <button class="counter-btn plus" aria-label="Increase adults" data-target="adults">+</button>
+                </div>
+              </div>
+              <div class="guest-row">
+                <div class="guest-info">
+                  <span class="guest-title">Children</span>
+                  <span class="guest-sub">Ages 2–12</span>
+                </div>
+                <div class="guest-controls">
+                  <button class="counter-btn minus" aria-label="Decrease children" data-target="children">−</button>
+                  <span class="count" id="count-children">0</span>
+                  <button class="counter-btn plus" aria-label="Increase children" data-target="children">+</button>
+                </div>
+                <div class="guest-row">
+                  <div class="guest-info">
+                    <span class="guest-title">Pets</span>
+                    <span class="guest-sub"></span>
+                  </div>
+                  <div class="guest-controls">
+                    <button class="counter-btn minus" aria-label="Decrease pets" data-target="pets">−</button>
+                    <span class="count" id="count-pets">0</span>
+                  <button class="counter-btn plus" aria-label="Increase pets" data-target="pets">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Listings Section -->
+    <section class="featured-listings">
+      <h2>Featured Listings</h2>
+      <div class="listings-container">
+        <div class="listing-card">
+          <div class="listing-image">
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="London Apartment"
+            />
+            <div class="listing-location">London</div>
+            <div class="listing-price">£1,200/month</div>
+          </div>
+          <div class="listing-details">
+            <p>
+              Chic studio apartment in the heart of Islington, perfect for
+              students. Excellent transport links.
+            </p>
+          </div>
+        </div>
+        <div class="listing-card">
+          <div class="listing-image">
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Manchester House"
+            />
+            <div class="listing-location">Manchester</div>
+            <div class="listing-price">£950/month</div>
+          </div>
+          <div class="listing-details">
+            <p>
+              Vibrant shared house near university campus. Includes all bills
+              and high-speed internet.
+            </p>
+          </div>
+        </div>
+        <div class="listing-card">
+          <div class="listing-image">
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Birmingham Room"
+            />
+            <div class="listing-location">Birmingham</div>
+            <div class="listing-price">£800/month</div>
+          </div>
+          <div class="listing-details">
+            <p>
+              Modern en-suite rooms available in a purpose-built student
+              accommodation. Gym and social spaces included.
+            </p>
+          </div>
+        </div>
+        <div class="listing-card">
+          <div class="listing-image">
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Edinburgh Flat"
+            />
+            <div class="listing-location">Edinburgh</div>
+            <div class="listing-price">£1,050/month</div>
+          </div>
+          <div class="listing-details">
+            <p>
+              Stylish flat located steps from historic landmarks and the
+              University of Edinburgh. Fully furnished.
+            </p>
+          </div>
+        </div>
+        <div class="listing-card">
+          <div class="listing-image">
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Bristol Apartment"
+            />
+            <div class="listing-location">Bristol</div>
+            <div class="listing-price">£880/month</div>
+          </div>
+          <div class="listing-details">
+            <p>
+              Contemporary apartment with great views, close to Bristol
+              University. All amenities provided.
+            </p>
+          </div>
+        </div>
+        <div class="listing-card">
+          <div class="listing-image">
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Nottingham Accommodation"
+            />
+            <div class="listing-location">Nottingham</div>
+            <div class="listing-price">£750/month</div>
+          </div>
+          <div class="listing-details">
+            <p>
+              Affordable and comfortable living in a prime student area.
+              Communal garden access.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="view-all">
+        <button>View All Stays</button>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section removed - see about.html -->
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+      <h2>Ready to find your next stay?</h2>
+      <button class="get-started">Get Started</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img
+            src="Images/0e36505fbfae41fdbe7a68bbb877d169-free__1_-removebg-preview.png"
+            alt="RoomHive Logo"
+            class="brand-logo"
+          />
+          <h3>RoomHive</h3>
+          <p>
+            Your trusted partner for student accommodation, ensuring fast, safe,
+            and stress-free stays.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Safety Tips</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Hosts</h4>
+            <ul>
+              <li><a href="#">List Your Property</a></li>
+              <li><a href="#">Host Guide</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 RoomHive. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="JavaScript/landing.js"></script>
+  </body>
+</html>

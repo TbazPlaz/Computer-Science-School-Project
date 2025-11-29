@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StaySpot - Sign Up Page</title>
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="CSS/signup.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <main class="signup-wrap">
+        <!-- Left illustration -->
+        <aside class="signup-illustration">
+            <img src="Images/Screenshot 2025-10-21 161905.png" alt="People sitting on bench in city" />
+        </aside>
+
+        <!-- Right signup card -->
+        <section class="signup-card">
+            <h1>Sign Up</h1>
+            <p class="subtitle">Join us and start your travel adventure!</p>
+
+            <form class="signup-form" action="PHP/signup.php" method="POST" novalidate>
+                <label for="fullname">Full Name</label>
+                <div class="input-group">
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required />
+                    <i class="fa-regular fa-user input-icon" aria-hidden="true"></i>
+                </div>
+
+                <label for="email">Email</label>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required />
+                    <i class="fa-regular fa-envelope input-icon" aria-hidden="true"></i>
+                </div>
+
+                <label for="password">Password</label>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="••••••••" required />
+                    <button type="button" class="toggle-password" aria-label="Show password">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </div>
+
+                <label for="confirm-password">Confirm Password</label>
+                <div class="input-group">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="••••••••" required />
+                    <button type="button" class="toggle-confirm-password" aria-label="Show password">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required />
+                    <label for="terms" class="checkbox-label">
+                        I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+
+                <div class="or-separator">
+                    <span>Or</span>
+                </div>
+
+                <button type="button" class="btn btn-outline btn-google">
+                    <i class="fab fa-google"></i>
+                    Continue with Google
+                </button>
+
+                <button type="button" class="btn btn-outline btn-facebook">
+                    <i class="fab fa-facebook"></i>
+                    Continue with Facebook
+                </button>
+
+                <div class="signup-footer">
+                    <span>Already have an account?</span>
+                    <a href="login.html" class="link">Sign In</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- <script src="JavaScript/signup.js"></script> -->  
+</body>
+</html>
